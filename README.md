@@ -1,0 +1,2 @@
+# NanoPC_Android
+用于机器人项目Android端的JNI接口实现
