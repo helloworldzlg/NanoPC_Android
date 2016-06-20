@@ -214,22 +214,22 @@ int gpio_fd_close(int fd)
 #define DELAY_MS(ms)            usleep((ms) * 1000)
 
 /*****************************************************************************
- º¯ Êý Ãû  : i2c_write_proc
- ¹¦ÄÜÃèÊö  : i2c_write_proc
- ÊäÈë²ÎÊý  : int fd              
+ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : i2c_write_proc
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : i2c_write_proc
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : int fd              
              unsigned char addr  
              unsigned char reg   
              unsigned char *val  
              unsigned char len   
- Êä³ö²ÎÊý  : ÎÞ
- ·µ »Ø Öµ  : static
- µ÷ÓÃº¯Êý  : 
- ±»µ÷º¯Êý  : 
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+ ï¿½ï¿½ ï¿½ï¿½ Öµ  : static
+ ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½  : 
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : 
  
- ÐÞ¸ÄÀúÊ·      :
-  1.ÈÕ    ÆÚ   : 2016Äê6ÔÂ16ÈÕ
-    ×÷    Õß   : zlg
-    ÐÞ¸ÄÄÚÈÝ   : ÐÂÉú³Éº¯Êý
+ ï¿½Þ¸ï¿½ï¿½ï¿½Ê·      :
+  1.ï¿½ï¿½    ï¿½ï¿½   : 2016ï¿½ï¿½6ï¿½ï¿½16ï¿½ï¿½
+    ï¿½ï¿½    ï¿½ï¿½   : zlg
+    ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½   : ï¿½ï¿½ï¿½ï¿½Éºï¿½ï¿½ï¿½
 
 *****************************************************************************/
 static int i2c_write_proc
@@ -270,22 +270,22 @@ static int i2c_write_proc
 }
 
 /*****************************************************************************
- º¯ Êý Ãû  : i2c_read_proc
- ¹¦ÄÜÃèÊö  : i2c_read_proc
- ÊäÈë²ÎÊý  : int fd              
+ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : i2c_read_proc
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : i2c_read_proc
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : int fd              
              unsigned char addr  
              unsigned char reg   
              unsigned char *val  
              unsigned char len   
- Êä³ö²ÎÊý  : ÎÞ
- ·µ »Ø Öµ  : static
- µ÷ÓÃº¯Êý  : 
- ±»µ÷º¯Êý  : 
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+ ï¿½ï¿½ ï¿½ï¿½ Öµ  : static
+ ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½  : 
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : 
  
- ÐÞ¸ÄÀúÊ·      :
-  1.ÈÕ    ÆÚ   : 2016Äê6ÔÂ16ÈÕ
-    ×÷    Õß   : zlg
-    ÐÞ¸ÄÄÚÈÝ   : ÐÂÉú³Éº¯Êý
+ ï¿½Þ¸ï¿½ï¿½ï¿½Ê·      :
+  1.ï¿½ï¿½    ï¿½ï¿½   : 2016ï¿½ï¿½6ï¿½ï¿½16ï¿½ï¿½
+    ï¿½ï¿½    ï¿½ï¿½   : zlg
+    ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½   : ï¿½ï¿½ï¿½ï¿½Éºï¿½ï¿½ï¿½
 
 *****************************************************************************/
 static int i2c_read_proc
@@ -325,19 +325,19 @@ static int i2c_read_proc
 }
 
 /*****************************************************************************
- º¯ Êý Ãû  : xfm20512_get_version
- ¹¦ÄÜÃèÊö  : xfm20512_get_version
- ÊäÈë²ÎÊý  : int fd                 
+ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : xfm20512_get_version
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : xfm20512_get_version
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : int fd                 
              unsigned int *version  
- Êä³ö²ÎÊý  : ÎÞ
- ·µ »Ø Öµ  : 
- µ÷ÓÃº¯Êý  : 
- ±»µ÷º¯Êý  : 
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+ ï¿½ï¿½ ï¿½ï¿½ Öµ  : 
+ ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½  : 
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : 
  
- ÐÞ¸ÄÀúÊ·      :
-  1.ÈÕ    ÆÚ   : 2016Äê6ÔÂ16ÈÕ
-    ×÷    Õß   : zlg
-    ÐÞ¸ÄÄÚÈÝ   : ÐÂÉú³Éº¯Êý
+ ï¿½Þ¸ï¿½ï¿½ï¿½Ê·      :
+  1.ï¿½ï¿½    ï¿½ï¿½   : 2016ï¿½ï¿½6ï¿½ï¿½16ï¿½ï¿½
+    ï¿½ï¿½    ï¿½ï¿½   : zlg
+    ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½   : ï¿½ï¿½ï¿½ï¿½Éºï¿½ï¿½ï¿½
 
 *****************************************************************************/
 int xfm20512_get_version(int fd, unsigned int *version)
@@ -363,19 +363,19 @@ int xfm20512_get_version(int fd, unsigned int *version)
 }
 
 /*****************************************************************************
- º¯ Êý Ãû  : xfm20512_get_degree
- ¹¦ÄÜÃèÊö  : xfm20512_get_degree
- ÊäÈë²ÎÊý  : int fd                
+ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : xfm20512_get_degree
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : xfm20512_get_degree
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : int fd                
              unsigned int *degree  
- Êä³ö²ÎÊý  : ÎÞ
- ·µ »Ø Öµ  : 
- µ÷ÓÃº¯Êý  : 
- ±»µ÷º¯Êý  : 
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+ ï¿½ï¿½ ï¿½ï¿½ Öµ  : 
+ ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½  : 
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : 
  
- ÐÞ¸ÄÀúÊ·      :
-  1.ÈÕ    ÆÚ   : 2016Äê6ÔÂ16ÈÕ
-    ×÷    Õß   : zlg
-    ÐÞ¸ÄÄÚÈÝ   : ÐÂÉú³Éº¯Êý
+ ï¿½Þ¸ï¿½ï¿½ï¿½Ê·      :
+  1.ï¿½ï¿½    ï¿½ï¿½   : 2016ï¿½ï¿½6ï¿½ï¿½16ï¿½ï¿½
+    ï¿½ï¿½    ï¿½ï¿½   : zlg
+    ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½   : ï¿½ï¿½ï¿½ï¿½Éºï¿½ï¿½ï¿½
 
 *****************************************************************************/
 int xfm20512_get_degree(int fd, unsigned int *degree)
@@ -401,7 +401,7 @@ int xfm20512_get_degree(int fd, unsigned int *degree)
     return 0;
 }
 
-int xfm20512_enter_wakeup(int fd)
+int xfm20512_wakeup_reset(int fd)
 {
     unsigned int data = 0x00001100;
     
@@ -440,19 +440,19 @@ int xfm20512_exit_wakeup(int fd, unsigned int beam)
 }
 
 /*****************************************************************************
- º¯ Êý Ãû  : xfm20512_set_gain_direction
- ¹¦ÄÜÃèÊö  : ÉèÖÃÊ°Òô²¨ÊøµÄ·½Ïò
- ÊäÈë²ÎÊý  : int fd                  
+ ï¿½ï¿½ ï¿½ï¿½ ï¿½ï¿½  : xfm20512_set_gain_direction
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½ï¿½ï¿½Ê°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ä·ï¿½ï¿½ï¿½
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : int fd                  
              unsigned int direction  
- Êä³ö²ÎÊý  : ÎÞ
- ·µ »Ø Öµ  : 
- µ÷ÓÃº¯Êý  : 
- ±»µ÷º¯Êý  : 
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : ï¿½ï¿½
+ ï¿½ï¿½ ï¿½ï¿½ Öµ  : 
+ ï¿½ï¿½ï¿½Ãºï¿½ï¿½ï¿½  : 
+ ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½  : 
  
- ÐÞ¸ÄÀúÊ·      :
-  1.ÈÕ    ÆÚ   : 2016Äê6ÔÂ16ÈÕ
-    ×÷    Õß   : zlg
-    ÐÞ¸ÄÄÚÈÝ   : ÐÂÉú³Éº¯Êý
+ ï¿½Þ¸ï¿½ï¿½ï¿½Ê·      :
+  1.ï¿½ï¿½    ï¿½ï¿½   : 2016ï¿½ï¿½6ï¿½ï¿½16ï¿½ï¿½
+    ï¿½ï¿½    ï¿½ï¿½   : zlg
+    ï¿½Þ¸ï¿½ï¿½ï¿½ï¿½ï¿½   : ï¿½ï¿½ï¿½ï¿½Éºï¿½ï¿½ï¿½
 
 *****************************************************************************/
 int xfm20512_set_gain_direction(unsigned int direction)
@@ -464,13 +464,13 @@ int xfm20512_set_gain_direction(unsigned int direction)
     
     unsigned int data = 0x00001200 | ((direction & 0x3) << 16);
     
-    /* 1. ÉèÖÃÊ°Òô²¨Êø */
+    /* 1. ï¿½ï¿½ï¿½ï¿½Ê°ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½ */
     if (i2c_write_proc(i2c_fileId, xfm20512_ADDR, 0x00, (unsigned char *)&data, sizeof(unsigned int)))
         return -1;
         
     DELAY_MS(1);    
 
-    /* 2. ²éÑ¯ÃüÁî×´Ì¬ */
+    /* 2. ï¿½ï¿½Ñ¯ï¿½ï¿½ï¿½ï¿½×´Ì¬ */
     do 
     {
         if (i2c_read_proc(i2c_fileId, xfm20512_ADDR, 0x00, (unsigned char *)&data, sizeof(unsigned int)))
@@ -492,7 +492,7 @@ int i2c_init()
     int ret;
     int write_count = 0;
 
-    /* ´ò¿ªI2CÉè±¸ */
+    /* I2Cè®¾å¤‡æ‰“å¼€ */
     i2c_fileId = open("/dev/i2c-0", O_RDWR);
     if (i2c_fileId < 0) 
     {
@@ -507,7 +507,7 @@ int i2c_init()
         return REGISTER_SLAVE_ERR;
     }
 #endif
-    /* »ñÈ¡°æ±¾ÐÅÏ¢ */
+    /* è¯»å–ç‰ˆæœ¬å·ä¿¡æ¯ */
     unsigned int version;
     
     if (!xfm20512_get_version(i2c_fileId, &version))
@@ -519,7 +519,7 @@ int i2c_init()
 }
 
 JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_open
-(JNIEnv *env, jobject obj, jstring path, jint oflag)
+(JNIEnv *env, jclass cls, jstring path, jint oflag)
 {
     int gpio;
     int ret;
@@ -555,7 +555,7 @@ JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_open
 }
 
 JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_getWakeUpState
-(JNIEnv *env, jobject obj, jint wakeup_fd)
+(JNIEnv *env, jclass cls, jint wakeup_fd)
 {
     struct pollfd fdset[2];
     int nfds = 2;
@@ -589,13 +589,13 @@ JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_getWakeUpSt
 }
 
 JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_getWakeUpDegree
-(JNIEnv *env, jobject obj)
+(JNIEnv *env, jclass cls)
 {
     return wakeup_degree;
 }
 
 JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_close
-(JNIEnv *env, jobject obj, jint gpio_fileId)
+(JNIEnv *env, jclass cls, jint gpio_fileId)
 {
     close(gpio_fileId);
     
@@ -603,12 +603,18 @@ JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_close
 }
 
 /*
- * DirectionËµÃ÷: ÑØÄæÊ±Õë·½Ïò 0->(0')  1->(90')  2->(180')  3->(270')
+ * Direction: å¢žå¤§æ–¹å‘è¯´æ˜Ž 0->(0')  1->(90')  2->(180')  3->(270')
  */
-JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_set_gain_direction
-(JNIEnv *env, jobject obj, jint direction)
+JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_setGainDirection
+(JNIEnv *env, jclass cls, jint direction)
 {        
     return xfm20512_set_gain_direction(direction);
+}
+
+JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_wakeUpReset
+(JNIEnv *, jclass)
+{
+    return xfm20512_wakeup_reset(i2c_fileId);
 }
 
 #ifdef __cplusplus

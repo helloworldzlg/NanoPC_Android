@@ -10,18 +10,18 @@ extern "C" {
 /*
  * Class:     com_robot_et_core_hardware_wakeup_WakeUp
  * Method:    open
- * Signature: (Ljava/lang/String;I)Ljava/io/FileDescriptor;
+ * Signature: (Ljava/lang/String;I)I
  */
-JNIEXPORT jobject JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_open
-  (JNIEnv *, jobject, jstring, jint);
+JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_open
+  (JNIEnv *, jclass, jstring, jint);
 
 /*
  * Class:     com_robot_et_core_hardware_wakeup_WakeUp
  * Method:    getWakeUpState
- * Signature: ()I
+ * Signature: (I)I
  */
 JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_getWakeUpState
-  (JNIEnv *, jobject, jint fd);
+  (JNIEnv *, jclass, jint);
 
 /*
  * Class:     com_robot_et_core_hardware_wakeup_WakeUp
@@ -29,7 +29,23 @@ JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_getWakeUpSt
  * Signature: ()I
  */
 JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_getWakeUpDegree
-  (JNIEnv *, jobject);
+  (JNIEnv *, jclass);
+
+/*
+ * Class:     com_robot_et_core_hardware_wakeup_WakeUp
+ * Method:    setGainDirection
+ * Signature: (I)I
+ */
+JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_setGainDirection
+  (JNIEnv *, jclass, jint);
+
+/*
+ * Class:     com_robot_et_core_hardware_wakeup_WakeUp
+ * Method:    wakeUpReset
+ * Signature: ()I
+ */
+JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_wakeUpReset
+  (JNIEnv *, jclass);
 
 /*
  * Class:     com_robot_et_core_hardware_wakeup_WakeUp
@@ -37,7 +53,7 @@ JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_getWakeUpDe
  * Signature: (I)I
  */
 JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_close
-  (JNIEnv *, jobject, jint);
+  (JNIEnv *, jclass, jint);
 
 #ifdef __cplusplus
 }
