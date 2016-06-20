@@ -47,7 +47,7 @@ int Robot_SetEmotion(int emotion_id)
     int index = 0;
     unsigned char tx_buffer[] = {0xAA, 0x70, 0x00, 0xCC, 0x33, 0xC3, 0x3C};        
    
-    tx_buffer[2] = emotion_id & 0xFF;
+    tx_buffer[2] = (char)(emotion_id & 0xFF);
     
     write(g_uart3_fileid, (void*)tx_buffer, sizeof(tx_buffer)); 
           
