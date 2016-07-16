@@ -260,7 +260,7 @@ JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_emotion_Emotion_setEmotio
 JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_emotion_Emotion_close
 (JNIEnv *env, jclass cls)
 {
-    return close(g_uart3_fileid);
+    return close(g_uart3_fileid) | close(g_uart2_fileid);
 }
 
 #ifdef __cplusplus
