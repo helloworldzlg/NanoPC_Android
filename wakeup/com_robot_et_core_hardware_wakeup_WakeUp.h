@@ -9,19 +9,19 @@ extern "C" {
 #endif
 /*
  * Class:     com_robot_et_core_hardware_wakeup_WakeUp
- * Method:    open
- * Signature: (Ljava/lang/String;I)I
+ * Method:    wakeUpInit
+ * Signature: ()I
  */
-JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_open
-  (JNIEnv *, jclass, jstring, jint);
+JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_wakeUpInit
+  (JNIEnv *, jclass);
 
 /*
  * Class:     com_robot_et_core_hardware_wakeup_WakeUp
  * Method:    getWakeUpState
- * Signature: (I)I
+ * Signature: ()I
  */
 JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_getWakeUpState
-  (JNIEnv *, jclass, jint);
+  (JNIEnv *, jclass);
 
 /*
  * Class:     com_robot_et_core_hardware_wakeup_WakeUp
@@ -49,11 +49,27 @@ JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_wakeUpReset
 
 /*
  * Class:     com_robot_et_core_hardware_wakeup_WakeUp
+ * Method:    faceWakeUpInit
+ * Signature: ()I
+ */
+JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_faceWakeUpInit
+  (JNIEnv *, jclass);
+
+/*
+ * Class:     com_robot_et_core_hardware_wakeup_WakeUp
+ * Method:    getFaceWakeUpState
+ * Signature: ()I
+ */
+JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_getFaceWakeUpState
+  (JNIEnv *, jclass);
+
+/*
+ * Class:     com_robot_et_core_hardware_wakeup_WakeUp
  * Method:    close
- * Signature: (I)I
+ * Signature: ()I
  */
 JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_close
-  (JNIEnv *, jclass, jint);
+  (JNIEnv *, jclass);
 
 #ifdef __cplusplus
 }

@@ -27,6 +27,7 @@ extern "C"
 #define POLL_TIMEOUT                          (3 * 1000) /* 3 seconds */
 #define MAX_BUF 64
 #define GPIO_C4                               (68)
+#define GPIO_C8                               (72)
 
 #define WAKEUP_SUCCESS                        (0)
 #define WAKEUP_FAIL                           (-1)
@@ -36,7 +37,8 @@ extern "C"
 #define SOUND_LOCALIZATION_OCCUR              (1)
 
 unsigned int i2c_fileId;
-int gpio_fileId;
+int gpioC4_fileId;
+int gpioC8_fileId;
 unsigned int wakeup_degree;
 
 /****************************************************************
@@ -518,8 +520,8 @@ int i2c_init()
     return WAKEUP_SUCCESS;
 }
 
-JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_open
-(JNIEnv *env, jclass cls, jstring path, jint oflag)
+JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_wakeUpInit
+(JNIEnv *env, jclass cls)
 {
     int gpio;
     int ret;
@@ -545,17 +547,45 @@ JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_open
     gpio_export(gpio);
     gpio_set_dir(gpio, 0);
     gpio_set_edge(gpio, (char*)"rising");
-    gpio_fileId = gpio_fd_open(gpio);
-    if (gpio_fileId < 0)
+    gpioC4_fileId = gpio_fd_open(gpio);
+    if (gpioC4_fileId < 0)
     {
         return WAKEUP_FAIL;        
     }
 
-    return gpio_fileId;
+    return gpioC4_fileId;
+}
+
+JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_faceWakeUpInit
+(JNIEnv *env, jclass cls)
+{
+    int gpio;
+    
+    system("setenforce 0");
+    system("chmod 777 /sys/class/gpio");
+    system("chmod 777 /sys/class/gpio/export");
+    system("echo 72 > /sys/class/gpio/export");
+    system("chmod 777 /sys/class/gpio/gpio72");
+    system("chmod 777 /sys/class/gpio/gpio72/direction");
+    system("chmod 777 /sys/class/gpio/gpio72/edge");
+    system("chmod 777 /sys/class/gpio/gpio72/value");    
+    
+    gpio = GPIO_C8;
+    
+    gpio_export(gpio);
+    gpio_set_dir(gpio, 0);
+    gpio_set_edge(gpio, (char*)"rising");
+    gpioC8_fileId = gpio_fd_open(gpio);
+    if (gpioC8_fileId < 0)
+    {
+        return WAKEUP_FAIL;        
+    }
+
+    return gpioC8_fileId;    
 }
 
 JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_getWakeUpState
-(JNIEnv *env, jclass cls, jint wakeup_fd)
+(JNIEnv *env, jclass cls)
 {
     struct pollfd fdset[2];
     int nfds = 2;
@@ -573,19 +603,28 @@ JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_getWakeUpSt
     }
 #else
     unsigned int value = 0;
-    (void)gpio_get_value(68, &value);
+    (void)gpio_get_value(GPIO_C4, &value);
     if (value != 0)
     {
         xfm20512_get_degree(i2c_fileId, &wakeup_degree);
         while (value != 0)
         {
-            (void)gpio_get_value(68, &value);
+            (void)gpio_get_value(GPIO_C4, &value);
         }
         return 1;
     }
 #endif
 
     return WAKEUP_SUCCESS;
+}
+
+JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_getFaceWakeUpState
+(JNIEnv *, jclass)
+{
+	unsigned int value = 0;
+	(void)gpio_get_value(GPIO_C8, &value);
+	
+	return value;
 }
 
 JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_getWakeUpDegree
@@ -595,9 +634,10 @@ JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_getWakeUpDe
 }
 
 JNIEXPORT jint JNICALL Java_com_robot_et_core_hardware_wakeup_WakeUp_close
-(JNIEnv *env, jclass cls, jint gpio_fileId)
+(JNIEnv *env, jclass cls)
 {
-    close(gpio_fileId);
+    close(gpioC4_fileId);
+    close(gpioC8_fileId);
     
     return WAKEUP_SUCCESS;
 }

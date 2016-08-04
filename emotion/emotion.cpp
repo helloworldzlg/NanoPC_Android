@@ -81,17 +81,17 @@ void emotion_blink()
 	write(g_uart2_fileid, (void*)tx_buffer, sizeof(tx_buffer));
 	write(g_uart3_fileid, (void*)tx_buffer, sizeof(tx_buffer));
 	
-	usleep(400000);
+//	usleep(400000);
 	
-	tx_buffer[2] = 0x01;
-	write(g_uart2_fileid, (void*)tx_buffer, sizeof(tx_buffer));
-	write(g_uart3_fileid, (void*)tx_buffer, sizeof(tx_buffer));	
+//	tx_buffer[2] = 0x01;
+//	write(g_uart2_fileid, (void*)tx_buffer, sizeof(tx_buffer));
+//	write(g_uart3_fileid, (void*)tx_buffer, sizeof(tx_buffer));	
 	
-	usleep(400000);
+//	usleep(400000);
 	
-	tx_buffer[2] = 0x00;
-	write(g_uart2_fileid, (void*)tx_buffer, sizeof(tx_buffer));
-	write(g_uart3_fileid, (void*)tx_buffer, sizeof(tx_buffer));		
+//	tx_buffer[2] = 0x00;
+//	write(g_uart2_fileid, (void*)tx_buffer, sizeof(tx_buffer));
+//	write(g_uart3_fileid, (void*)tx_buffer, sizeof(tx_buffer));		
 }
 
 void emotion_pleasure()
@@ -136,6 +136,12 @@ void emotion_anger()
 	unsigned char tx_buffer[] = {0xAA, 0x70, 0x00, 0xCC, 0x33, 0xC3, 0x3C};
 
 	tx_buffer[2] = 0x06;
+	write(g_uart2_fileid, (void*)tx_buffer, sizeof(tx_buffer));
+	write(g_uart3_fileid, (void*)tx_buffer, sizeof(tx_buffer));
+
+	usleep(500000);
+
+	tx_buffer[2] = 0x00;
 	write(g_uart2_fileid, (void*)tx_buffer, sizeof(tx_buffer));
 	write(g_uart3_fileid, (void*)tx_buffer, sizeof(tx_buffer));
 
